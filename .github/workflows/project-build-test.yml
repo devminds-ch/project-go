@@ -1,0 +1,53 @@
+name: Build and test the project
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  GO_VERSION: 1.23
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        goos: [ 'linux', 'windows' ]
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ env.GO_VERSION }}
+
+    - name: Install dependencies
+      run: go get .
+
+    - name: Check code formatting
+      run: test -z $(gofmt -l .)
+
+    - name: Build
+      run: |
+        GOOS=${{ matrix.goos }}
+        GOARCH=amd64
+        go build -v -o go_training_project-${{ matrix.goos }}-amd64
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: go_training_project-${{ matrix.goos }}-amd64
+        path: go_training_project-${{ matrix.goos }}-amd64
+
+    - name: Run Tests
+      run: go test -v ./... -json > TestResults-${{ matrix.goos }}.json
+
+    - name: Upload Go test results
+      uses: actions/upload-artifact@v4
+      with:
+        name: TestResults-${{ matrix.goos }}
+        path: TestResults-${{ matrix.goos }}.json
