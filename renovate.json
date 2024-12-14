@@ -3,8 +3,9 @@
   "extends": [
     "config:recommended"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": [
         "^golang-ci-lint.yml$"
       ],
