@@ -10,10 +10,10 @@
         "/golang-ci-lint\\.yml$"
       ],
       "matchStrings": [
-        " +version: (?<currentValue>.*?)\\n"
+        "GOLANGCI_LINT_VERSION: (?<currentValue>.*?)\\n"
       ],
-      "depNameTemplate": "github.com/golangci/golangci-lint",
-      "datasourceTemplate": "go"
+      "depNameTemplate": "golangci/golangci-lint",
+      "datasourceTemplate": "github-releases"
     }
   ]
 }
