@@ -10,6 +10,9 @@ on:
 permissions:
   contents: read
 
+env:
+  GOLANGCI_LINT_VERSION: v1.60
+
 jobs:
   golangci:
     name: lint
@@ -22,4 +25,4 @@ jobs:
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v6
         with:
-          version: v1.62
+          version: ${{ env.GOLANGCI_LINT_VERSION }}
