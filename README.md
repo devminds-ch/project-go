@@ -34,6 +34,7 @@ Use "go_training_project [command] --help" for more information about a command.
 
 ```
 
+
 ## Build and test instructions
 
 ### Build Go application
@@ -58,7 +59,7 @@ Run [golangci-lint](https://golangci-lint.run/):
 golangci-lint run
 ```
 
-Note: make sure to install the tool first or execute it within CI.
+Note: the `golangci-lint` executable is available within the `devcontainer`.
 
 
 ### Run Go tests
