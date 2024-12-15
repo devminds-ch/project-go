@@ -27,3 +27,27 @@ func TestSumNegative(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestSubtract(t *testing.T) {
+	if Subtract(1, 1) != 0 {
+		t.Fail()
+	}
+	if Subtract(2, 1) != 1 {
+		t.Fail()
+	}
+	if Subtract(1, 2) != -1 {
+		t.Fail()
+	}
+}
+
+func TestSubtractNegative(t *testing.T) {
+	if Subtract(1, -1) != 2 {
+		t.Fail()
+	}
+	if Subtract(-1, 1) != -2 {
+		t.Fail()
+	}
+	if Subtract(-1, -1) != 0 {
+		t.Fail()
+	}
+}
