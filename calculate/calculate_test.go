@@ -5,13 +5,13 @@ import (
 )
 
 func TestSum(t *testing.T) {
-	if Sum(1, 4) != 5 {
+	if Sum(1, 5) != 6 {
 		t.Fail()
 	}
-	if Sum(2, 4) != 5 {
+	if Sum(2, 5) != 6 {
 		t.Fail()
 	}
-	if Sum(1, 4) != 5 {
+	if Sum(1, 5) != 6 {
 		t.Fail()
 	}
 }
