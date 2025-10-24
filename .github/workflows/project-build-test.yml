@@ -38,7 +38,7 @@ jobs:
         go build -v -o go_training_project-${{ matrix.goos }}-amd64
 
     - name: Upload build artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: go_training_project-${{ matrix.goos }}-amd64
         path: go_training_project-${{ matrix.goos }}-amd64
@@ -47,7 +47,7 @@ jobs:
       run: go test -v ./... -json > TestResults-${{ matrix.goos }}.json
 
     - name: Upload Go test results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: TestResults-${{ matrix.goos }}
         path: TestResults-${{ matrix.goos }}.json
