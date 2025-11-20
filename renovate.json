@@ -6,8 +6,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "/golang-ci-lint\\.yml$"
+      "managerFilePatterns": [
+        "//golang-ci-lint\\.yml$/"
       ],
       "matchStrings": [
         "GOLANGCI_LINT_VERSION: (?<currentValue>.+)\\n"
@@ -17,8 +17,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "/project-build-test\\.yml$"
+      "managerFilePatterns": [
+        "//project-build-test\\.yml$/"
       ],
       "matchStrings": [
         "GO_VERSION: (?<currentValue>.+)\\n"
