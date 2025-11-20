@@ -31,7 +31,6 @@ Use "go_training_project [command] --help" for more information about a command.
 ├── calculate   Go package containing the calculations including corresponding tests
 ├── cmd         Go package containing the application CLI
 └── docs        Project documentation
-
 ```
 
 
