@@ -26,5 +26,38 @@
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "golang/go"
     }
+  ],
+  "packageRules": [
+    {
+      "groupName": "GitHub Actions",
+      "matchManagers": [
+        "github-actions"
+      ]
+    },
+    {
+      "groupName": "GitHub Actions",
+      "matchManagers": [
+        "regex"
+      ],
+      "matchDepNames": [
+        "golangci/golangci-lint"
+      ]
+    },
+    {
+      "groupName": "Go",
+      "matchManagers": [
+        "devcontainer",
+        "gomod"
+      ]
+    },
+    {
+      "groupName": "Go",
+      "matchManagers": [
+        "regex"
+      ],
+      "matchDepNames": [
+        "golang/go"
+      ]
+    }
   ]
 }
