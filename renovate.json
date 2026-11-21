@@ -1,13 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    "default:automergeMinor",
-    "default:rebaseStalePrs"
-  ],
-  "minimumReleaseAge": "14 days",
-  "minimumReleaseAgeBehaviour": "timestamp-optional",
-  "prCreation": "not-pending",
+  "extends": ["github>devminds-ch/renovate"],
   "customManagers": [
     {
       "customType": "regex",
@@ -33,12 +26,6 @@
     }
   ],
   "packageRules": [
-    {
-      "groupName": "GitHub Actions",
-      "matchManagers": [
-        "github-actions"
-      ]
-    },
     {
       "groupName": "GitHub Actions",
       "matchManagers": [
