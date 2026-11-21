@@ -18,10 +18,10 @@ jobs:
         goos: [ 'linux', 'windows' ]
     steps:
     - name: Checkout code
-      uses: actions/checkout@v7
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
     - name: Set up Go
-      uses: actions/setup-go@v7
+      uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5 # v7
       with:
         go-version: ${{ env.GO_VERSION }}
 
@@ -38,7 +38,7 @@ jobs:
         go build -v -o go_training_project-${{ matrix.goos }}-amd64
 
     - name: Upload build artifact
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
       with:
         name: go_training_project-${{ matrix.goos }}-amd64
         path: go_training_project-${{ matrix.goos }}-amd64
@@ -47,7 +47,7 @@ jobs:
       run: go test -v ./... -json > TestResults-${{ matrix.goos }}.json
 
     - name: Upload Go test results
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
       with:
         name: TestResults-${{ matrix.goos }}
         path: TestResults-${{ matrix.goos }}.json
